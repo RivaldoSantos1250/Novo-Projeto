@@ -41,7 +41,7 @@
             background-color: #ff1e40;
         }
         .imagens-gatos {
-            display: none;
+            display: none; /* Esconde as imagens até clicar */
             margin-top: 20px;
             display: flex;
             justify-content: center;
@@ -86,9 +86,9 @@
     <button class="btn" onclick="mostrarSurpresa()">Clique para uma surpresa 🎁</button>
     
     <div class="imagens-gatos" id="imagens-gatos">
-        <img id="cat1" src="" alt="Gatinho fofo">
-        <img id="cat2" src="" alt="Gatinho fofo">
-        <img id="cat3" src="" alt="Gatinho fofo">
+        <img id="cat1" style="display:none;" alt="">
+        <img id="cat2" style="display:none;" alt="">
+        <img id="cat3" style="display:none;" alt="">
     </div>
 
     <audio id="audio1" src="rojao.mp3"></audio>
@@ -103,6 +103,10 @@
                 document.getElementById("cat1").src = data[0].url;
                 document.getElementById("cat2").src = data[1].url;
                 document.getElementById("cat3").src = data[2].url;
+
+                document.getElementById("cat1").style.display = "block";
+                document.getElementById("cat2").style.display = "block";
+                document.getElementById("cat3").style.display = "block";
             } catch (error) {
                 console.error("Erro ao carregar imagens de gatos:", error);
             }
@@ -110,7 +114,7 @@
 
         function mostrarSurpresa() {
             document.getElementById("imagens-gatos").style.display = "flex";
-            setInterval(carregarGatos, 2000); 
+            setInterval(carregarGatos, 5000);
             carregarGatos();
 
             let audio1 = document.getElementById("audio1");
