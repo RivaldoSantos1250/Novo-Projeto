@@ -91,7 +91,7 @@
         <img id="cat3" style="display:none;" alt="">
     </div>
 
-    <audio id="audio1" src="rojao.mp3"></audio>
+    <audio id="audio1" src="fogos.mp3"></audio>
     <audio id="audio2" src="para2.mp3"></audio>
     
     <script>
@@ -114,7 +114,7 @@
 
         function mostrarSurpresa() {
             document.getElementById("imagens-gatos").style.display = "flex";
-            setInterval(carregarGatos, 2000);
+            setInterval(carregarGatos, 1950);
             carregarGatos();
 
             let audio1 = document.getElementById("audio1");
@@ -131,12 +131,12 @@
             let gif1 = "https://media1.giphy.com/media/tHIRLHtNwxpjIFqPdV/giphy.gif";
             let gif2 = "https://media0.giphy.com/media/l3vRlT2k2L35Cnn5C/giphy.gif";
 
-            let gif1Interval = setInterval(() => criarGif(gif1, "gif1"), 700);
+            let gif1Interval = setInterval(() => criarGif(gif1, "gif1"), 1000);
 
             setTimeout(() => {
                 clearInterval(gif1Interval);
-                setInterval(() => criarGif(gif2, "gif2"), 700);
-            }, 15000);
+                setInterval(() => criarGif(gif2, "gif2"), 950);
+            }, 16000);
         }
 
         function criarGif(src, tipo) {
