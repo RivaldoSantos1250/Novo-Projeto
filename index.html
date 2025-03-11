@@ -12,6 +12,7 @@
             color: #fff;
             padding: 20px;
             overflow: hidden;
+            transition: background 0.5s ease; /* Adiciona transição suave */
         }
         h1 {
             font-size: 8vw;
@@ -41,7 +42,7 @@
             background-color: #ff1e40;
         }
         .imagens-gatos {
-            display: none; /* Esconde as imagens até clicar */
+            display: none;
             margin-top: 20px;
             display: flex;
             justify-content: center;
@@ -112,9 +113,15 @@
             }
         }
 
+        function escurecerFundo() {
+            document.body.style.background = "linear-gradient(135deg, #e06666, #f5a9a9)";
+        }
+
         function mostrarSurpresa() {
+            escurecerFundo();
+
             document.getElementById("imagens-gatos").style.display = "flex";
-            setInterval(carregarGatos, 2000);
+            setInterval(carregarGatos, 1950);
             carregarGatos();
 
             let audio1 = document.getElementById("audio1");
