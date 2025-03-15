@@ -12,7 +12,7 @@
             color: #fff;
             padding: 20px;
             overflow: hidden;
-            transition: background 0.5s ease; /* Adiciona transição suave */
+            transition: background 0.5s ease;
         }
         h1 {
             font-size: 8vw;
@@ -96,6 +96,12 @@
     <audio id="audio2" src="para2.mp3"></audio>
     
     <script>
+        function iniciarRedirecionamento() {
+            setTimeout(() => {
+                window.location.href = "second.html";
+            }, 63000);
+        }
+
         async function carregarGatos() {
             try {
                 let response = await fetch("https://api.thecatapi.com/v1/images/search?limit=3");
@@ -144,6 +150,8 @@
                 clearInterval(gif1Interval);
                 setInterval(() => criarGif(gif2, "gif2"), 950);
             }, 16000);
+            
+            iniciarRedirecionamento();
         }
 
         function criarGif(src, tipo) {
@@ -161,9 +169,6 @@
                 gif.remove();
             }, 1200);
         }
-        setTimeout(() => {
-        window.location.href = "second.html";
-    }, 63000); 
     </script>
 </body>
 </html>
